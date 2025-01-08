@@ -1,0 +1,632 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background:#003366;
+
+}
+
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:	 #001a33;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader img {
+    width: 100px;
+    height: 100px;
+    animation: rotateTyre 2s linear infinite; /* Added animation to rotate tyre */
+}
+
+@keyframes rotateTyre {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Header Section */
+header {
+    background:	 #092b4bee;
+    color: #FF4500;
+    padding: 1em 2em;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px; /* Fixed height */
+}
+
+/* Logo Styles */
+.logo {
+    max-width: 80px; /* Initial logo size */
+    margin-right: 1em;
+    border-radius: 10%; /* Making the logo circular */
+    margin-top: 16px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    display: inline-block; /* Ensures the logo stays inline */
+}
+
+/* Adding hover effect on the logo */
+.logo:hover {
+    transform: scale(1.2); /* Slightly increase logo size on hover */
+    box-shadow: 0 0 15px #FF4500; /* Light orange shadow effect */
+}
+
+/* Pseudo-element for the background behind the logo */
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FF4500; /* Light orange color */
+    border-radius: 50%; /* Matching logo's border radius */
+    z-index: -1; /* Behind the logo */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease, box-shadow 0.3s ease; /* Smooth fade-in transition */
+}
+
+/* When logo is hovered, make the background visible */
+.logo:hover::before {
+    opacity: 1; /* Show the background */
+    box-shadow: 0 0 25px#FF4500; /* Glow effect with blur */
+}
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.nav-links li {
+    margin-left: 2em;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #FF4500;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FF4500;
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: flex-start; /* Keep text on the left */
+    align-items: center; /* Vertically center the text */
+    padding: 0;
+    background:	 #001a33;
+    color: #FF4500;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Hero Image */
+.hero-image {
+    position: absolute;
+    top: 0; /* Stick image to the top */
+    right: 0; /* Stick image to the right */
+    width: 50%; /* Image takes up half the hero section */
+    height: 100%; /* Image height is 100% */
+    margin-top: 90px;
+    box-shadow: 0 0 20px #1375d1fc;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the space without stretching */
+    margin: 0; /* Remove any margin */
+}
+
+/* Hero Content */
+.hero-content {
+    max-width: 50%; /* Text occupies the other half */
+    padding: 0 2em; /* Padding on the left and right to create space around text */
+    margin-top: 10%; /* Move text down a bit */
+    margin-bottom: 10%; /* Equal margin on bottom */
+    z-index: 1; /* Ensure the text stays above the image */
+}
+
+.hero-content h2 {
+    font-size: 3.5em;
+    color:whitesmoke 
+}
+
+.hero-content h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color:whitesmoke 
+}
+
+.hero p {
+    margin-bottom: 30px;
+    margin-right: 30px;
+    color:whitesmoke 
+}
+
+
+
+
+/* Adjust button position */
+.cta-button {
+    margin-left: 20px; /* Added margin to move button to the right */
+    padding: 1em 2em;
+    background: #FF4500;
+    color:white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+
+/* Explore Tyres Section */
+.explore-tyres {
+    background:	 #001a33;
+    text-align: center;
+    padding: 4em;
+    color: rgb(19, 18, 18);
+}
+.color-service{
+    color: white;
+    margin-bottom: 50px;
+}
+.tyre-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+}
+
+.tyre-card {
+    background: whitesmoke;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.tyre-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tyre-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+
+
+.cta-button a {
+    color: 	 #001a33;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background:	 #001a33; /* Button turns white when hovered */
+    color: #FF4500; /* Text turns orange when hovered */
+    transform: scale(1.05);
+}
+
+.cta-button a:hover {
+    color: #FF4500; /* Text turns orange when hovering over the link */
+}
+
+/* Remove the default blue color of links inside the button */
+.cta-button a:focus, .cta-button a:active {
+    color: inherit; /* Maintain the white color when the link is focused or clicked */
+}
+
+
+/* About Us Section */
+.about {
+    background: #092b4bee;
+    color: whitesmoke;
+    padding: 3em;
+    text-align: center;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin-top: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 1%; /* Added left margin */
+    margin-right: 1%; /* Added right margin */
+}
+
+.about p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 0 auto;
+    text-align: justify; /* Ensures the text spans evenly across the section */
+    color: whitesmoke;
+}
+.about h3{
+    margin-left: auto;
+}
+
+
+/* Owners Info Section */
+.owners-info {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2em;
+    margin-top: 50px;
+}
+
+.owner-card {
+    background: 	 #143e65ee;
+    padding: 1.5em;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.owner-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.owner-card img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 1em;
+}
+
+.owner-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    color: #FF4500;
+}
+
+.owner-card p {
+    font-size: 1em;
+    color: #FF4500;
+    margin-left: 40px;
+}
+
+/* Mobile Responsiveness for About Us */
+@media (max-width: 768px) {
+    .owners-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .owner-card {
+        width: 80%;
+        margin-bottom: 2em;
+    }
+}
+
+
+/* General Styles for the Slider Section */
+.slider-section {
+    margin: 0;
+    padding: 0;
+    background-color: #001a33;
+    padding-bottom: 20px; /* Spacing below slider */
+    padding-top: 40px; /* Added padding on top */
+}
+
+
+/* Slider Container */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Increased box size */
+    margin: auto;
+    overflow: hidden;
+    border: 2px solid #001a33;
+    border-radius: 10px;
+    background-color: #001a33; /* Keeps the slider background dark */
+}
+
+/* Dark overlay behind the slider images */
+.slider-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay effect */
+    z-index: 1;
+    border-radius: 10px; /* Same as the slider container */
+}
+
+/* Slides */
+.mySlides {
+    display: none; /* Only one slide visible at a time */
+    text-align: center;
+    position: relative; /* To keep image above the overlay */
+    z-index: 2;
+}
+
+.mySlides img {
+    width: 100%; /* Full width of the container */
+    height: 500px; /* Uniform height for all images */
+    object-fit: cover; /* Maintain image aspect ratio */
+    border-radius: 5px;
+}
+
+/* Navigation Arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #001a33;
+    color: #FF4500;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    user-select: none;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background: #001a33;
+}
+
+/* Dots/Indicators */
+.dots-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background: #001a33;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot.active {
+    background: #FF4500; /* Change active dot color to orange */
+}
+
+/* Animation for Fade Effect */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+  
+/* Contact Section */
+.contact {
+    padding: 3em;
+    background: #0d365c;
+    color: whitesmoke;
+    text-align: center;
+}
+
+/* Contact Card */
+.contact-card {
+    background: #094985;
+    width: 90%;
+    max-width: 1700px;
+    padding: 3em;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    color: whitesmoke;
+}
+
+/* Title: Our Shop */
+.contact-info h3 {
+    text-align: center;
+    margin-bottom: 1.5em;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+/* Contact Info Container (Phone & Address) */
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em; /* Smaller text size for uniformity */
+    font-weight: bold;
+    color: whitesmoke;
+    margin-bottom: 1em;
+    width: 100%;
+    justify-content: flex-start; /* Ensure both sections start from the same point */
+}
+
+/* Phone Section */
+.contact-item.phone {
+    justify-content: flex-start; /* Ensure it starts from left */
+}
+
+/* Address Section */
+.contact-item.address {
+    justify-content: flex-start; /* Ensure it starts from left, aligned with phone */
+}
+
+/* Contact Item Style */
+.contact-item i {
+    font-size: 1.5em; /* Icon size for phone and address */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+/* Address text styling */
+.contact-item span, .contact-item p {
+    font-size: 1.1em; /* Same text size for consistency */
+    margin-left: 10px; /* Adding a little space between text and icon */
+}
+
+/* Contact Form */
+.contact-form h3 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    color: whitesmoke;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1em;
+    margin: 1em 0;
+    border: 2px solid #FF4500;
+    border-radius: 5px;
+    font-size: 1em;
+    color: whitesmoke;
+    background: #001a33;
+    box-sizing: border-box;
+    transition: border 0.3s ease, transform 0.3s ease;
+}
+
+/* Button */
+.contact-form button {
+    background: #FF4500;
+    color: whitesmoke;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: rgb(58, 129, 230);
+}
+
+/* Remove Extra Space Below */
+.contact-form {
+    margin-bottom: 0;
+}
+
+.contact-card {
+    margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-item {
+        width: 100%; /* Full width for phone and address on smaller screens */
+        text-align: center; /* Center-align text */
+        margin-bottom: 1em;
+    }
+
+    .contact-info h3 {
+        text-align: center; /* Center title for smaller screens */
+    }
+}
+
+
+
+
+
+/* Footer Section */
+footer {
+    background: 	 #001a33;
+    color: whitesmoke;
+    text-align: center;
+    padding: 1.5em;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 2em;
+    }
+
+    .hero-image img {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .tyre-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .owner-cards {
+        flex-direction: column;
+        border-radius: 50%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        margin-top: 0;
+    }
+}
+.brand{
+    margin-right: 590px;
+    margin-top: 30px;
+
+   color:whitesmoke ;
+}
